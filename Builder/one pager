@@ -1,0 +1,26 @@
+Steckbrief
+    Name: Builder
+    Art: Erzeugungsmuster (Creational)
+    Ziel: Trennung der Konstruktion eines komplexen Objekts von seiner Repräsentation
+
+Vorteile:
+Lesbarkeit: Code sieht aus wie natürlicher Text (Fluent Interface).
+Immutability: Das fertige Objekt kann "immutable" (unveränderlich) sein.
+Flexibilität: Parameter können in beliebiger Reihenfolge gesetzt werden.
+Validierung: Prüfung der Daten vor der eigentlichen Erzeugung möglich.
+
+Nachteile:
+  Mehraufwand: Man muss eine zusätzliche Builder-Klasse schreiben.
+ 	Komplexität: Lohnt sich bei sehr einfachen Objekten kaum.
+
+Einsatzgebiete:
+    Beim Erstellen von Objekten mit vielen optionalen Attributen.
+    Wenn eine bestimmte Reihenfolge beim Aufbau eingehalten werden muss.
+    In modernen Frameworks (z.B. HTTP-Requests in Java/Spring oder UI-Komponenten).
+
+Warum existiert es?
+  Kennt ihr das Problem von Konstruktoren mit 10 verschiedenen Parametern?
+  User(String name, int age, String email, boolean isAdmin, String address, ...)
+  Das nennt man die "Telescoping Constructor Anti-Pattern".
+  Es ist unübersichtlich, fehleranfällig (welcher String war nochmal die Adresse?) und unflexibel.
+  Der Builder löst dies, indem er das Objekt Schritt für Schritt aufbaut.
